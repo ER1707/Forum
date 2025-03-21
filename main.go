@@ -19,6 +19,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// Définir le handler pour la route /
+	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
 	http.HandleFunc("/", homeHandler)
 
 	// Définir le port du serveur
