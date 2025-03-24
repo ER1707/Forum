@@ -1,20 +1,55 @@
-#div1 {
-    border:4px solid #000;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
-
-#div2 {
-    border: 4px solid #ff0000;
-    
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #777;
+    color: white;
+    padding: 20px;
 }
-
-#div3 {
-    border: 4px solid #00ff00;
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 50%;
 }
-
-#div4 {
-    border : 4px solid #0000ff;
+.auth-buttons button {
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
 }
-
-#div5 {
-    border: 4px solid #ff00ff;
+.container {
+    display: flex;
+}
+.sidebar {
+    width: 20%;
+    background-color: #999;
+    height: 100vh;
+}
+main {
+    width: 60%;
+    padding: 20px;
+}
+.content-box {
+    background-color: #ccc;
+    height: 200px;
+    margin-bottom: 20px;
+}
+.categories {
+    width: 20%;
+    background-color: #888;
+    padding: 20px;
+}
+.categories h2 {
+    color: white;
+}
+.categories ul {
+    list-style: none;
+    padding: 0;
+    color: white;
 }

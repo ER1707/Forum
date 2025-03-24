@@ -30,6 +30,7 @@ func main() {
 	// Définir le handler pour la route /
 
 	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
+	http.Handle("/scripts/", http.StripPrefix("/scripts/", http.FileServer(http.Dir("scripts"))))
 	http.HandleFunc("/login", loginHandler)
 
 	http.HandleFunc("/", homeHandler)
