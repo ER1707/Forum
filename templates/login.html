@@ -15,16 +15,16 @@
 
         <div class="form-box login">
             <h2 class="title animation" style="--i:0; --j:21">Login</h2>
-            <form action="#">
+            <form action="/api/login" method="POST">
 
                 <div class="input-box animation" style="--i:1; --j:22">
-                    <input type="text" required>
+                    <input type="text" name="username" required>
                     <label for="username_login">Username</label>
                     <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box animation" style="--i:2; --j:23">
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label for="password_login">Password</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
@@ -44,22 +44,21 @@
 
             <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
 
-            <form action="#">
-
+            <form action="/api/register" method="POST">
                 <div class="input-box animation" style="--i:18; --j:1">
-                    <input type="text" required>
+                    <input type="text" name="username"required>
                     <label for="username_signup">Username</label>
                     <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="email" required>
+                    <input type="email" name= "email" required>
                     <label for="email">Email</label>
                     <i class='bx bxs-envelope'></i>
                 </div>
 
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label for="password_signup">Password</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
