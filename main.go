@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Forum/Database"
 	"fmt"
 	"html/template"
 	"log"
@@ -27,6 +28,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	Database.InitDB()
 	// Définir le handler pour la route /
 
 	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
