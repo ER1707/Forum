@@ -9,6 +9,10 @@ import (
 	"net/http"
 )
 
+type LoginRegisterData struct {
+	Type string
+}
+
 // Handler pour la page d'accueil
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/index.html")
@@ -21,11 +25,21 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/login.html")
+	var PageData LoginRegisterData = LoginRegisterData{"wrapper"}
 	if err != nil {
 		log.Println("Erreur lors du chargement de la page de connexion :", err)
 		return
 	}
-	tmpl.Execute(w, nil)
+	tmpl.Execute(w, PageData)
+}
+func registerHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/login.html")
+	var PageData LoginRegisterData = LoginRegisterData{"wrapper active"}
+	if err != nil {
+		log.Println("Erreur lors du chargement de la page de connexion :", err)
+		return
+	}
+	tmpl.Execute(w, PageData)
 }
 
 func main() {
@@ -39,6 +53,7 @@ func main() {
 	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
 	http.Handle("/scripts/", http.StripPrefix("/scripts/", http.FileServer(http.Dir("scripts"))))
 	http.HandleFunc("/login", loginHandler)
+	http.HandleFunc("/register", registerHandler)
 
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/api/register", API.Register)
