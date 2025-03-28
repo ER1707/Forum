@@ -54,6 +54,7 @@ func main() {
 	http.Handle("/scripts/", http.StripPrefix("/scripts/", http.FileServer(http.Dir("scripts"))))
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/register", registerHandler)
+	http.HandleFunc("/create_post", API.CreatePostHandler)
 
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/api/register", API.Register)
