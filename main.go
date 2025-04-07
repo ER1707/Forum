@@ -50,15 +50,16 @@ func main() {
 	defer Database.CloseDB()
 	// Définir le handler pour la route /
 
-	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
-	http.Handle("/scripts/", http.StripPrefix("/scripts/", http.FileServer(http.Dir("scripts"))))
+	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/register", registerHandler)
-	http.HandleFunc("/create_post", API.CreatePostHandler)
 
-	http.HandleFunc("/", homeHandler)
+	http.HandleFunc("/api/create_post", API.CreatePostHandler)
 	http.HandleFunc("/api/register", API.Register)
 	http.HandleFunc("/api/login", API.Login)
+
+	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
+	http.Handle("/scripts/", http.StripPrefix("/scripts/", http.FileServer(http.Dir("scripts"))))
 
 	// Définir le port du serveur
 	port := ":8080"

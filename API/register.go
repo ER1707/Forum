@@ -14,14 +14,11 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	username := r.FormValue("username")
 	password := r.FormValue("password")
 	email := r.FormValue("email")
-	if username == "" || password == "" || email == "" {
-		http.Error(w, "Missing parameter", http.StatusBadRequest)
-		return
-	}
+
 	password = Database.HashPassword(password)
 	_, err := Database.DB.Exec("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", username, password, email)
 	if err != nil {
-		json.NewEncoder(w).Encode(map[string]string{"message": "Impossible de créer le compte"})
+		json.NewEncoder(w).Encode(map[string]string{"message": "Pseudo ou email déjà utilisé"})
 		return
 	}
 	json.NewEncoder(w).Encode(map[string]string{"message": "Succès"})

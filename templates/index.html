@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <div class="logo"></div>
+        <img src="logo.png" height="100" width="100" alt="Logo">
         <h1>LanguesEnsemble</h1>
         <div class="auth-buttons">
             <a href="http://localhost:8080/register">
@@ -22,9 +22,10 @@
     <div class="container">
         
         <aside class="sidebar">
-            <form id="postForm">
-                <input type="text" id="title" placeholder="Titre" required>
-                <textarea id="content" placeholder="Contenu du post" required></textarea>
+            <form action="/create_post" method="POST">
+                <input type="text" id="title" placeholder="Titre" name="title" required>
+                <input type="text" id="gg" placeholder="Category" name="category" required>
+                <input type="text" id="text" placeholder="content" name="content" required>
                 <button type="submit">Publier</button>
             </form>
         </aside>
@@ -52,5 +53,6 @@
             </ul>
         </aside>
     </div>
+    <script src="/scripts/script_posts.js"></script>
 </body>
 </html>

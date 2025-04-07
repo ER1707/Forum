@@ -3,10 +3,16 @@ package Database
 import (
 	"database/sql"
 	"log"
+	"net/http"
 
 	_ "github.com/mattn/go-sqlite3"
 	"golang.org/x/crypto/bcrypt"
 )
+
+type User struct {
+	ID       int    `json:"id"`
+	Username string `json:"username"`
+}
 
 var DB *sql.DB
 
@@ -84,4 +90,16 @@ func HashPassword(password string) string {
 		return ""
 	}
 	return string(bytes)
+}
+
+func UserInfos(w http.ResponseWriter, r *http.Request) (User, bool) {
+	token, _ := r.Cookie("session")
+	var user User
+	row := DB.QueryRow("SELECT id, username FROM users WHERE token=?", token.Value)
+	row.Scan(&user.ID, &user.Username)
+	print(user.Username)
+	if row.Err() == sql.ErrNoRows {
+		return User{}, false
+	}
+	return user, true
 }
