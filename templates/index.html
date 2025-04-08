@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maquette</title>
-    <link rel="stylesheet" href="/styles/style_acc.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TandemTalk Forum d'apprentissage de langue</title>
+  <link rel="stylesheet" href="/styles/style_acc.css">
 </head>
 <body>
-    <header>
-        <div class="logo"></div>
-        <h1>LanguesEnsemble</h1>
+  <!-- Header Principal -->
+  <header class="main-header">
+    <div class="header-left">
+      <div class="logo">
+        <a href="/">
+          <!-- LOGO: Insérez votre logo ici -->
+          <div class="logo-placeholder"></div>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="#">Voyage </a>
+        <a href="#">Actualité </a> 
+        <a href="#">Culture </a>
+        <a href="#">Loisirs </a>
+        <a href="#">Sport </a>
+      </nav>
+    </div>
+    <div class="header-right">
         <div class="auth-buttons">
             <a href="http://localhost:8080/register">
                 <button>Inscription</button>
@@ -18,24 +33,112 @@
                 <button>Connection</button>
             </a>
         </div>
-    </header>
-    <div class="container">
-        
-        <aside class="sidebar">
-            <form id="postForm">
-                <input type="text" id="title" placeholder="Titre" required>
-                <textarea id="content" placeholder="Contenu du post" required></textarea>
-                <button type="submit">Publier</button>
-            </form>
-        </aside>
-        <main>
-            <div class="content-box">  
-            </div>
-            <div class="content-box">
-
-            </div>
-        </main>
-       
+      <button class="theme-button">
+        <!-- ICONE: soleil -->
+        <span class="icon-sun">☀</span>
+      </button>
     </div>
+  </header>
+
+  <!-- Navigation des plateformes -->
+  <nav class="platforms-nav">
+    <a href="#">Anglais</a>
+    <a href="#">Espagnol</a>
+    <a href="#">Italien</a>
+    <a href="#">Portugais</a>
+    <a href="#">Thaïlandais</a>
+  </nav>
+
+
+  <!-- Contenu principal -->
+  <div class="main-container">
+    <div class="forum-container">
+      <h1 class="forum-title">Forum Anglais </h1>
+
+      <!-- Actions du forum -->
+      <div class="forum-actions">
+        <a href="#" class="new-topic-button">Nouveau sujet</a>
+        <a href="#" class="refresh-button">Actualiser</a>
+      </div>
+
+      <!-- Barre de recherche -->
+      <div class="search-bar">
+        <div class="search-dropdown">Sujet</div>
+        <input type="text" class="search-input" placeholder="Rechercher dans le forum">
+        <div class="search-button-container">
+          <span class="icon-search">Q</span>
+        </div>
+      </div>
+
+    
+
+      <!-- Tableau des sujets -->
+      <table class="topic-table">
+        <thead>
+          <tr>
+            <th>SUJET</th>
+            <th>AUTEUR</th>
+            <th>NB</th>
+            <th>DERNIER MSG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="topic-icon"><span class="icon-pin">📁</span></td>
+            <td><a href="#" class="topic-title">Random topic</a></td>
+            <td class="author">Moderation51</td>
+            <td class="message-count">8</td>
+            <td class="last-message">
+              <span class="date">20/04/2023</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="topic-icon"><span class="icon-pin">📁</span></td>
+            <td><a href="#" class="topic-title">Règles du forum</a></td>
+            <td class="author">odoki</td>
+            <td class="message-count">0</td>
+            <td class="last-message">
+              <span class="date">08/11/2022</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="topic-icon"><span class="icon-folder">📁</span></td>
+            <td><a href="#" class="topic-title">Magalie en NUISETTE en 4K sur YOUTUBE</a></td>
+            <td class="author">CacaGluant76</td>
+            <td class="message-count">3</td>
+            <td class="last-message">
+              <span class="date">09:42:36</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-title">SOUS-FORUMS</div>
+        <div class="sidebar-content">
+          <a href="#" class="sidebar-link">Religion</a>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">INFOS</div>
+        <div class="sidebar-content">
+          <div class="forum-stats">
+            <span class="icon-users">👥</span> 524 connecté(s)
+          </div>
+
+        
+
+          <div class="info-section">
+            <div><strong>SUJETS À NE PAS MANQUER</strong></div>
+            <div class="no-content">Aucun sujet à ne pas manquer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
