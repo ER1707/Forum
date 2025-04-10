@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-type Post struct {
+type CreatePost struct {
 	UserID     int    `json:"user_id"`
 	CategoryID int    `json:"category_id"`
 	Title      string `json:"title"`
