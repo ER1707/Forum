@@ -41,6 +41,14 @@ func registerHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl.Execute(w, PageData)
 }
+func loisirsHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/Loisirs.html")
+	if err != nil {
+		http.Error(w, "Page non trouvée", http.StatusNotFound)
+		return
+	}
+	tmpl.Execute(w, nil)
+}
 
 func main() {
 	err := Database.InitDB()
@@ -53,6 +61,7 @@ func main() {
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/register", registerHandler)
+	http.HandleFunc("/loisirs", loisirsHandler)
 
 	http.HandleFunc("/api/create_post", API.CreatePostHandler)
 	http.HandleFunc("/api/register", API.Register)
