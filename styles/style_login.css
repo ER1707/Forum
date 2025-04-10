@@ -23,9 +23,9 @@ body{
     width: 750px;
     height: 450px;
     background: var(--white);
-    border: 2px solid var(--black);
+    border: 2px solid var(--lightBulue);
     border-radius: 10px;
-    box-shadow: 0 0 20px var(--black);
+    box-shadow: 0 0 20px var(--lightBulue);
     overflow: hidden;
 }
 
@@ -49,7 +49,7 @@ body{
     margin-bottom: 10px;
     position: relative;
     font-size: 32px;
-    color: var(--black);
+    color: var(--lightBulue);
     text-align: center;
 }
 
@@ -75,12 +75,12 @@ body{
     width: 100%;
     height: 100%;
     background: transparent;
-    color: var(--black);
+    color: var(--lightBulue);
     font-size: 16px;
     font-weight: 500;
     border: none;
     outline: none;
-    border-bottom: 2px solid var(--black);
+    border-bottom: 2px solid var(--lightBulue);
     transition: .5s;
     padding-right: 23px;
 }
@@ -126,7 +126,7 @@ body{
 form button{
     width: 100%;
     height: 45px;
-    background-color: var(--black);
+    background-color: var(--lightBulue);
     color: var(--white);
     border: none;
     outline: none;
@@ -143,7 +143,7 @@ form button:hover{
 
 form .linkTxt{
     font-size: 14px;
-    color: var(--black);
+    color: var(--lightBulue);
     text-align: center;
     margin: 20px 0 10px;
 }

@@ -397,22 +397,29 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
  
-button {
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-link {
   font-size: 17px;
   padding: 0.5em 2em;
-  border: transparent;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   background: dodgerblue;
   color: white;
   border-radius: 4px;
-  margin-left: 10px;
- }
- 
- button:hover {
-  background: rgb(2,0,36);
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-link:hover {
   background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
- }
- 
- button:active {
+}
+
+.auth-link:active {
   transform: translate(0em, 0.2em);
- }
+}
